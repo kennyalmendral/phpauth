@@ -1,0 +1,131 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	color: #222;
+    font-family: Georgia, sans-serif;
+}
+
+#wrapper {
+	height: 100%;
+	width: 100%;
+}
+
+#header {
+	z-index: 10;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	background: #222;
+	padding: 10px;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+#header a:hover {
+	text-decoration: none;
+}
+
+#header h1 {
+	font-weight: normal;
+	text-align: center;
+	margin: 0;
+	color: #fff;
+}
+
+#content {
+	z-index: 5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 20px;
+	font-size: 20px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#content a {
+	color: #222;
+}
+
+#content form {
+	border: 1px solid #222;
+	margin: auto;
+	padding: 20px;
+}
+
+#content form > div {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+#content form > div:last-of-type {
+	margin-bottom: 0;
+}
+
+#content form > div label,
+#content form > div input {
+	display: block;
+}
+
+#content form > div label {
+	margin-bottom: 5px;
+}
+
+#content form > div input {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid #222;
+	font-size: 20px;
+	width: 100%;
+}
+
+#content form > div label[for="remember"],
+#content form > div input#remember {
+	display: inline-block;
+	cursor: pointer;
+}
+
+#content form > div input#remember {
+	width: auto;
+}
+
+#content form > div label[for="remember"] {
+	font-size: 16px;
+}
+
+#content form > div input[type="submit"] {
+	width: 100%;
+	cursor: pointer;
+	color: #fff;
+	background: #222;
+}
+
+#content form > div input[type="submit"]:hover {
+	background: #2a2a2a;
+}
+
+#content form a.register {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#content .errors,
+#content .error,
+#content .flash {
+	border: 0;
+	text-align: center;
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+	background: #222;
+	color: #fff;
+	padding: 10px;
+}
