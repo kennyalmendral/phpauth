@@ -1,0 +1,119 @@
+.page-login,
+.page-register {
+	background-color: #fafafa;
+}
+
+.page-login > .wrapper,
+.page-register > .wrapper {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -40%);
+	transform: translate(-50%, -40%);
+}
+
+.page-login .form-login,
+.page-register .form-register {
+	width: 315px;
+	margin: auto;
+	background: #fff;
+	border-radius: 0.25rem;
+	border: 1px solid #ced4da;
+	border-bottom: 4px solid #ced4da;
+}
+
+.page-login .logo,
+.page-register .logo {
+    width: 180px;
+    margin: 0 auto 30px;
+}
+
+.page-login .logo a,
+.page-register .logo a {
+	display: block;
+}
+
+.page-login .logo img,
+.page-register .logo img {
+	width: 100%;
+}
+
+.page-login .form-login .checkbox,
+.page-register .form-register .checkbox {
+	font-weight: 700;
+}
+
+.page-login .form-login .form-control,
+.page-register .form-register .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.page-login .form-login .form-control:focus,
+.page-register .form-register .form-control:focus {
+	z-index: 2;
+}
+
+.page-login .btn,
+.page-register .btn {
+	font-size: 1rem !important;
+}
+
+.page-login .register {
+	margin-left: 5px;
+}
+
+.page-login label[for="remember"],
+.page-register label {
+	font-weight: 700;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+
+.page-login .form-group,
+.page-register .form-group {
+	padding: 15px 15px 0;
+	margin: 0;
+}
+
+.page-login .form-group.buttons,
+.page-register .form-group.buttons {
+	margin-top: 15px;
+	padding-bottom: 15px;
+	text-align: left;
+	background: #fafafa;
+	border-top: 1px solid #eee;
+}
+
+.page-login .form-group.buttons input,
+.page-login .form-group.buttons a,
+.page-register .form-group.buttons input,
+.page-register .form-group.buttons a {
+	display: inline-block;
+}
+
+.page-login .alert,
+.page-register .alert {
+	margin-bottom: 0;
+}
+
+.page-login .bottom,
+.page-register .bottom {
+	text-align: center;
+	margin: 20px auto;
+}
+
+.page-login .bottom a,
+.page-register .bottom a {
+	color: #aaa;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.page-login .bottom a:hover,
+.page-register .bottom a:hover {
+	color: #888;
+}

@@ -15,6 +15,10 @@ class Input {
 		}
 	}
 
+	public static function all() {
+		return $_POST;
+	}
+
 	public static function get($item) {
 		if (isset($_POST[$item])) {
 			return $_POST[$item];

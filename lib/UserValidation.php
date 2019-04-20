@@ -1,6 +1,6 @@
 <?php
 
-class Validate {
+class UserValidation {
 	private $_passed = false, $_errors = array(), $_db = null;
 
 	public function __construct() {
@@ -14,30 +14,34 @@ class Validate {
 				$item = escape($item);
 
 				if ($rule == 'required' && empty($value)) {
-					if ($item == 'password_again')
-						$item = 'Repeat Password';
-					$this->addError(ucwords($item) . ' is required');
+					$this->addError($item, ucwords($item) . ' is required');
 				} else if ( ! empty($value)) {
 					switch ($rule) {
 						case 'min':
-							if (strlen($value) < $rule_value)
-								$this->addError(ucwords($item) . " must be a minimum of {$rule_value} characters");
+							if (strlen($value) < $rule_value) {
+								$this->addError($item, ucwords($item) . " must be a minimum of {$rule_value} characters");
+							}
+
 							break;
 						case 'max':
-							if (strlen($value) > $rule_value)
-								$this->addError(ucwords($item) . " must be a maximum of {$rule_value} characters");
+							if (strlen($value) > $rule_value) {
+								$this->addError($item, ucwords($item) . " must be a maximum of {$rule_value} characters");
+							}
+
 							break;
 						case 'matches':
-							if ($item == 'password_again')
-								$item = 'Repeat Password';
-							if ($value != $source[$rule_value])
-								$this->addError(ucwords($rule_value) . ' must match ' . ucwords($item));
+							if ($value != $source[$rule_value]) {
+								$this->addError($item, ucwords($rule_value) . ' must match ' . ucwords($item));
+							}
+
 							break;
 						case 'unique':
 							$check = $this->_db->get($rule_value, array($item, '=', $value));
 
-							if ($check->count())
-								$this->addError("{$item} already exists");
+							if ($check->count()) {
+								$this->addError($item, "{$item} already exists");
+							}
+
 							break;
 						default:
 							break;
@@ -46,14 +50,15 @@ class Validate {
 			}
 		}
 
-		if (empty($this->_errors))
+		if (empty($this->_errors)) {
 			$this->_passed = true;
+		}
 
 		return $this;
 	}
 
-	private function addError($error) {
-		$this->_errors[] = $error;
+	private function addError($key, $error) {
+		$this->_errors[$key] = $error;
 	}
 
 	public function errors() {
