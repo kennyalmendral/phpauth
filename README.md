@@ -1,2 +1,2 @@
 # PHPAuth
-Extendable PHP System with Base User Authentication
+Extendable PHP system with base user authentication
